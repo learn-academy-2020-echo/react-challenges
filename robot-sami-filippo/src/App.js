@@ -26,21 +26,23 @@ class App extends Component {
 render (){
 return (
   <>
-    <GoodRobot
-    
-
-
+  <GoodRobot
+    value = {this.state.userInput}
     />
 
-    {/* Sample Input
-    <br/>
-    <input
+  <KanyeRobot 
+      value = {this.state.userInput}
+      />
+
+   <BadRobot
+       value = {this.state.userInput}
+    />
+
+  <input
     type="text"
     value={this.state.userInput}
     onChange={this.handleChange}
    />
-   {/* to see the update of state */}
-   {/* {this.state.userInput} */}
   </>
 )
 }

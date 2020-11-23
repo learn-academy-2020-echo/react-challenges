@@ -3,38 +3,50 @@ import React, { Component} from 'react'
 
 
 class BadRobot extends Component {
+
+
+  blaFunction = (value) => {
+    let arr = value.split("")
+    let newArray = []
+
+    for (let index = 0; index < arr.length; index++) {
+  //     if(index === 0){
+  //       newArray.push("b")
+  //     }else if(index === 1){
+  //      newArray.push("l") 
+  //     }else if(index === 2){
+  //       newArray.push("a")
+
+  //   }else if(arr[index - 1] === "a"){
+  //     newArray.push("b")
+  //   }else if(arr[index - 1] === "l"){
+  //     newArray.push("a")
+  //   }else if(arr[index - 1] === "b"){
+  //     newArray.push("l")
+  // }
+
+  if(index % 3 === 0){
+    newArray.push("B")
+  }else if(index % 3 === 1){
+    newArray.push("L")
+  }else if(index % 3 === 2){
+    newArray.push("A")
+  }
+}
+  return newArray
+}
   
-  constructor(props) {
-      super(props)
-      this.state={
-          userInput:""
-      }
-  }
-
-// e is short for event. events have their own built-in properties and methods
-  handleChange = (e) => {
-// I can console log e and see a tons of properties, one is target that refers to input
-      // console.log(e) 
-// going deeper
-      // console.log(e.target)
-// one level deeper
-      console.log(e.target.value)
-      this.setState({userInput: e.target.value})
-
-  }
+//7 8 13 14 19 20 22 23
 
 render (){
 return (
   <>
-    Sample Input
-    <br/>
-    <input
-    type="text"
-    value={this.state.userInput}
-    onChange={this.handleChange}
-   />
-   {/* to see the update of state */}
-   {this.state.userInput}
+  <h1>Bad Robot:</h1> 
+<p 
+  onChange = { () => this.blaFunction(this.props.value) }>
+  {this.blaFunction(this.props.value)}
+  </p>
+  
   </>
 )
 }
