@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 class GoodRobot extends Component {
+
+
 	render() {
 		return (
-			<div>
-				<h1>Good Robot</h1>
+			<div id = "good">
+				<h3>Good Robot</h3>
+				<h4> I hear you saying { this.props.value }. Is that correct?</h4>
 			</div>
 		)
 	}

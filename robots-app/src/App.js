@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import GoodRobot from './components/GoodRobot'
 import EvilRobot from './components/EvilRobot'
 import AustinPowersRobot from './components/AustinPowersRobot'
+import chatbot from './assets/chatbot.png'
 
 import './App.css'
 
@@ -21,15 +22,23 @@ class App extends Component {
 	render() {
 		return (
 			<Fragment>
+			<div id = "container">
+			<img src = {chatbot}/>
 				<h1>Robo Active Listening</h1>
+				<h2> Say Something! </h2>
 				<input
 					type='text'
 					value={this.state.userInput}
 					onChange={this.handleChange}
 				/>
-				<GoodRobot />
-				<EvilRobot />
-				<AustinPowersRobot />
+				<hr className= "main-hr"/>
+				<GoodRobot
+					value= { this.state.userInput }/>
+				<EvilRobot
+					value= { this.state.userInput }/>
+				<AustinPowersRobot
+					value= { this.state.userInput }/>
+					</div>
 			</Fragment>
 		)
 	}
